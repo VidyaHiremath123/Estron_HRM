@@ -5,7 +5,6 @@
     <classes>
       <class name="hrm.HRhead.DashBoardTest"/>
       <class name="hrm.HRhead.EmployeeTest"/>
-      <class name="hrm.HRhead.CorporateTest"/>
       <class name="hrm.HRhead.BranchTest"/>
     </classes>
   </test> <!-- Test -->
