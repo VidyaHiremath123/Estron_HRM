@@ -37,7 +37,7 @@ public class BaseClass {
 	public void launchBrowser(/*String BROWSER*/) throws IOException{
 		String  URL =pUtil.readDataFromPropertyFile("url");
 		String BROWSER=pUtil.readDataFromPropertyFile("browser");
-		WebDriverManager.chromedriver().setup();
+		//WebDriverManager.chromedriver().setup();
 		//String BROWSER=System.getProperty("browser");
 		//String URL=System.getProperty("url");
 		//Step 3: Launch the Browser - RUNTIME POLYMORPHISM
