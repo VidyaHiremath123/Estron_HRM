@@ -35,10 +35,10 @@ public class BaseClass {
 	@BeforeClass(groups= {"SmokeSuite","RegionalRegressionSuite"})
 	@Parameters("BROWSER")
 	public void launchBrowser(/*String BROWSER*/) throws IOException{
-		String  URL =pUtil.readDataFromPropertyFile("url");
-		String BROWSER=pUtil.readDataFromPropertyFile("browser");
-		//String BROWSER=System.getProperty("browser");
-		//String URL=System.getProperty("url");
+		//String  URL =pUtil.readDataFromPropertyFile("url");
+		//String BROWSER=pUtil.readDataFromPropertyFile("browser");
+		String BROWSER=System.getProperty("browser");
+		String URL=System.getProperty("url");
 		//Step 3: Launch the Browser - RUNTIME POLYMORPHISM
 		if (BROWSER.equalsIgnoreCase("chrome")) 
 		{

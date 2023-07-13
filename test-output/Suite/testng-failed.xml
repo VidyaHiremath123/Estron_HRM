@@ -3,39 +3,6 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="hrm.HRhead.DashBoardTest">
-        <methods>
-          <include name="closeBrowser"/>
-          <include name="dashboardtest"/>
-          <include name="launchBrowser"/>
-          <include name="disconnectFromDatabase"/>
-          <include name="connectionToDatabase"/>
-          <include name="logoutFromApplication"/>
-          <include name="loginToApplication"/>
-        </methods>
-      </class> <!-- hrm.HRhead.DashBoardTest -->
-      <class name="hrm.HRhead.CorporateTest">
-        <methods>
-          <include name="corporateTest"/>
-          <include name="closeBrowser"/>
-          <include name="launchBrowser"/>
-          <include name="disconnectFromDatabase"/>
-          <include name="connectionToDatabase"/>
-          <include name="logoutFromApplication"/>
-          <include name="loginToApplication"/>
-        </methods>
-      </class> <!-- hrm.HRhead.CorporateTest -->
-      <class name="hrm.HRhead.EmployeeTest">
-        <methods>
-          <include name="closeBrowser"/>
-          <include name="employeeTest"/>
-          <include name="launchBrowser"/>
-          <include name="disconnectFromDatabase"/>
-          <include name="connectionToDatabase"/>
-          <include name="logoutFromApplication"/>
-          <include name="loginToApplication"/>
-        </methods>
-      </class> <!-- hrm.HRhead.EmployeeTest -->
       <class name="hrm.HRhead.BranchTest">
         <methods>
           <include name="closeBrowser"/>
@@ -43,10 +10,21 @@
           <include name="branchtest"/>
           <include name="disconnectFromDatabase"/>
           <include name="connectionToDatabase"/>
-          <include name="logoutFromApplication"/>
           <include name="loginToApplication"/>
+          <include name="logoutFromApplication"/>
         </methods>
       </class> <!-- hrm.HRhead.BranchTest -->
+      <class name="hrm.HRhead.CorporateTest">
+        <methods>
+          <include name="corporateTest"/>
+          <include name="closeBrowser"/>
+          <include name="launchBrowser"/>
+          <include name="disconnectFromDatabase"/>
+          <include name="connectionToDatabase"/>
+          <include name="loginToApplication"/>
+          <include name="logoutFromApplication"/>
+        </methods>
+      </class> <!-- hrm.HRhead.CorporateTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
