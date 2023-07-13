@@ -10,6 +10,13 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import com.aventstack.extentreports.reporter.configuration.Theme;
+
+
 
 
 
@@ -21,11 +28,14 @@ import org.testng.ITestResult;
 public class ListenersImplementation extends BaseClass implements ITestListener
 {
 	
-
+	ExtentReports report;
+	ExtentTest test;
 	
 	public void onTestStart(ITestResult result) 
 	{
-		String methodName=result.getMethod().getMethodName();
+		String methodName = result.getMethod().getMethodName();
+		test = report.createTest(methodName);
+		test.log(Status.INFO, " === test script execution started ===");
 	
 		
 		
@@ -34,6 +44,11 @@ public class ListenersImplementation extends BaseClass implements ITestListener
 
 
 	public void onTestSuccess(ITestResult result) {
+		
+		// TODO Auto-generated method stub
+		
+		String methodName = result.getMethod().getMethodName();
+		test.log(Status.PASS, methodName+"=== PASS ===");
 		
 	}
 
@@ -67,6 +82,11 @@ public class ListenersImplementation extends BaseClass implements ITestListener
 	
 
 	public void onTestSkipped(ITestResult result) {
+		
+
+		String methodName = result.getMethod().getMethodName();
+		test.log(Status.SKIP, methodName+" === SKIP ===");
+		test.log(Status.INFO, result.getThrowable()); // print the exception in report
 
 
 	}
@@ -82,12 +102,33 @@ public class ListenersImplementation extends BaseClass implements ITestListener
 	}
 
 	public void onStart(ITestContext context) {
+		
+
+		System.out.println("=== execution statred ===");
+		
+		//Extent Report Configuration Report-05 Apr 2023-10-23-45.html
+		ExtentSparkReporter htmlreporter = new ExtentSparkReporter("./ExtentReports/report-"+new JavaUtility().getSystemDateInFormat()+".html");
+		htmlreporter.config().setDocumentTitle("Vtiger Execution Report");
+		htmlreporter.config().setTheme(Theme.DARK);
+		htmlreporter.config().setReportName("Automation Execution Report");
+		
+		report = new ExtentReports();
+		report.attachReporter(htmlreporter);
+		report.setSystemInfo("Base URL", "http://localhost:8888");
+		report.setSystemInfo("Base Browser", "FireFox");
+		report.setSystemInfo("Base Platform", "Windows");
+		report.setSystemInfo("Reporter-Name", "Vidya");
+		
+		
 
 
 	}
 
 	public void onFinish(ITestContext context) {
-		// 
+		
+		System.out.println("=== executed finished ===");
+		
+		report.flush(); // generate the report 
 
 	}
 	

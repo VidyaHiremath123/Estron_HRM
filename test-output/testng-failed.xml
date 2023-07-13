@@ -14,17 +14,6 @@
           <include name="logoutFromApplication"/>
         </methods>
       </class> <!-- hrm.HRhead.BranchTest -->
-      <class name="hrm.HRhead.CorporateTest">
-        <methods>
-          <include name="corporateTest"/>
-          <include name="closeBrowser"/>
-          <include name="launchBrowser"/>
-          <include name="disconnectFromDatabase"/>
-          <include name="connectionToDatabase"/>
-          <include name="loginToApplication"/>
-          <include name="logoutFromApplication"/>
-        </methods>
-      </class> <!-- hrm.HRhead.CorporateTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

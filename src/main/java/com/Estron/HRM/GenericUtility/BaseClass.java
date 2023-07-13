@@ -43,7 +43,7 @@ public class BaseClass {
 		//Step 3: Launch the Browser - RUNTIME POLYMORPHISM
 		if (BROWSER.equalsIgnoreCase("chrome")) 
 		{
-			//WebDriverManager.chromedriver().setup();
+			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 		}
 		else if (BROWSER.equalsIgnoreCase("firefox")) 
