@@ -23,7 +23,7 @@ public class BaseClass {
 
 	public PropertyFileUtility pUtil=new PropertyFileUtility();
 	public static WebDriver sdriver;
-	public WebDriver driver = null;
+	public WebDriver driver;
 
 	@BeforeSuite
 	public void connectionToDatabase() {
